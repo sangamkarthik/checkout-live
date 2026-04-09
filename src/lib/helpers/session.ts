@@ -2,7 +2,8 @@ import { env } from '$env/dynamic/public';
 import { env as privateEnv } from '$env/dynamic/private';
 
 export const createSession = async (postData: string, type?: 'form' | 'fields' | 'post') => {
-	const url = `${env.PUBLIC_CHECKOUT_API_URL}/api/sessions`;
+	const baseUrl = env.PUBLIC_CHECKOUT_API_URL?.replace(/\/$/, '');
+	const url = `${baseUrl}/api/sessions`;
 
 	// Temporarily bypass strict SSL validation if hitting unstable internal ingresses
 	// (Replacement for `rejectUnauthorized: false`).
