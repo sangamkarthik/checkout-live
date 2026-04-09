@@ -14,7 +14,7 @@ export const createSession = async (postData: string, type?: 'form' | 'fields' |
 	const requestHeaders: Record<string, string> = {
 		Authorization: `Bearer ${type === 'form' ? privateEnv.PRIVATE_KEY : type === 'fields' ? privateEnv.PRIVATE_FIELDS_KEY : privateEnv.PRIVATE_KEY}`,
 		'Content-Type': 'application/json',
-		'User-Agent': 'CheckoutLive/1.0 (+https://checkout-live.vercel.app/)'
+		'User-Agent': 'CheckoutLive/1.0 (+https://checkout-live-lime.vercel.app/)'
 	};
 
 	console.log('\n[DEBUG API HTTP] === OUTGOING REQUEST ===');
